@@ -42,13 +42,22 @@ $(function(){
   });
 
 });
+
+// Inicilização de conteudo
 function init(){
   if(!Cookies.get('nickname')){
     console.log("Nickname não foi marcado");
   } else {
     $(".demowide").css("display", "none");
   }
+  if(!current_page)
+  {
+    loadPage("#home", "html");
+  }
 }
+
+
+ // Carregamento de páginas
 function loadPage(pageName, ext){
   current_page = pageName;
   pageName = pageName.replace("#", "");
