@@ -1,35 +1,89 @@
 <html>
   <head>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/material.min.css">
-    <script defer src="js/material.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/material.min.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="css/dialog-polyfill.css">
+    <script src="js/dialog-polyfill.js" charset="utf-8"></script> -->
+    <script src="js/script.js" charset="utf-8"></script>
+    <script src="js/js-cookie.js"></script>
+    <script id="rl" src="js/material.min.js"></script>
     <link rel="shortcut icon" href="http://codoforum.com/img/favicon-196x196.png" type="image/png">
     <title>EndCraft</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
   </head>
   <body>
+    <div class="background-image"></div>
     <div class="style-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">EndCraft</span>
           <div class="mdl-layout-spacer"> </div>
           <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="#">Início</a>
-            <a class="mdl-navigation__link" href="#">VIP</a>
-            <a class="mdl-navigation__link" href="#">Fórum</a>
-            <a class="mdl-navigation__link" href="#">Rankings</a>
-            <a class="mdl-navigation__link" href="#">Dúvidas</a>
+            <a id="home-page" class="mdl-navigation__link">Início</a>
+            <a id="vip-page" class="mdl-navigation__link">VIP</a>
+            <a id="forum-page" class="mdl-navigation__link">Fórum</a>
+            <a id="rankings-page" class="mdl-navigation__link">Rankings</a>
+            <a id="faq-page" class="mdl-navigation__link">Dúvidas</a>
           </nav>
         </div>
       </header>
-      <div class="container">
-        <div id=p2 class="mdl-progress mdl-js-progress mdl-progress__indeterminate">
 
+      <div class="container">
+        <div id=p2 class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+      </div>
+      <style media="screen">
+        .demo-card-wide.mdl-card {
+          width: 480px;
+          margin-bottom: 120px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .mdl-card {
+          min-height: 280px !important
+        }
+        .demo-card-wide > .mdl-card__title{
+          color: #fff;
+          height: 176px;
+          /*font-size: 12px;*/
+          background-image: url("images/card.jpeg");
+
+        }
+        .demo-card-wide button{
+          color: black;
+          cursor: pointer;
+        }
+        .demo-card-wide buttom:disabled{
+          color: gray;
+          cursor: not-allowed;
+        }
+        .demo-card-wide .mdl-card__supporting-text {
+          box-sizing: content-box;
+        }
+
+      </style>
+      <!-- Dialogo para escolher nick -->
+      <div class="demowide">
+        <div id="card-1" class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h4>Por favor, digite seu NICK.</h4>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="ol">
+              <label class="mdl-textfield__label" for="ol">Digite seu nick aqui.</label>
+            </div>
+
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button id="okay-1" class="mdl-button mdl-button--colored mdl-js-button" disabled="disabled">Pronto</button>
+          </div>
         </div>
       </div>
+
+      <!-- Fim do dialogo para escolher nick -->
 
       <footer class="mdl-mega-footer footer-style">
         <div class="mdl-mega-footer__middle-section">
@@ -46,5 +100,7 @@
         </div>
       </footer>
     </div>
+    <script defer type="text/javascript">init();</script>
   </body>
+  <!-- <script defer type="text/javascript" src="js/script.js"></script> -->
 </html>

@@ -1,0 +1,36 @@
+<script src="js/type.js" charset="utf-8"></script>
+<div class="home-index">
+  <h1><name /></h1>
+  <div class="home-title">
+    <h4>{*-*}</h4>
+  </div>
+  <div class="home-text">
+    <p>Estamos online, visite o servidor</p>
+    <p class="bold">jogar.endcraft.com.br</p>
+    <p>Atualmente na versão 1.5.2</p>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+  if(Cookies.get("nickname")){
+    // $("name").append(Cookies.get("nickname") + " logou no Endcraft");
+
+      var name = Cookies.get("nickname");
+    $("name").typed({
+      strings: [name, "logou no EndCraft", name + ", Bem Vindo!"],
+      typeSpeed: 0
+    });
+  }
+  $(".bold").hover(function() {
+    $(this).animate({
+      fontSize: "+=40",
+    }, 360)
+  }, function() {
+    $(this).animate({
+      fontSize: "-=40",
+    }, 360)
+  });
+
+})
+</script>

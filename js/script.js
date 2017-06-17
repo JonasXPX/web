@@ -1,0 +1,62 @@
+var current_page = null;
+
+$(function(){
+  if ($(location).attr('hash')) {
+    console.log("Loading...");
+    loadPage($(location).attr('hash'), "html");
+  }
+  $("a[id$='page']").click(function(){
+    var page = $(this).attr('id').split("-")[0];
+    console.log(page);
+    $(location).attr('hash', page);
+    loadPage(page, "html");
+  });
+  var test;
+  $("input#ol").keyup(function(v){
+    var text = $(this).val();
+    test = /(\w{3,})(?!\W)/i.test(text);
+    if(test){
+      console.log("alloed");
+      $("button#okay-1").attr("disabled", null);
+    } else {
+      $("button#okay-1").attr("disabled", "disabled");
+    }
+  });
+  $("input#ol").keydown(function(v){
+    console.log(v);
+    test = /(\w+)(?!\W)/i.test(v);
+    if(!test){
+      v.preventDefault();
+    }
+  });
+  $("button#okay-1").click(function(ev){
+    ev.preventDefault();
+    if(test){
+      $("#card-1").css("display", "none");
+      Cookies.set("nickname", $("input#ol").val());
+      $("name").typed({
+        strings: [Cookies.get("nickname"), "logou no EndCraft"],
+        typeSpeed: 0
+      })
+    }
+  });
+
+});
+function init(){
+  if(!Cookies.get('nickname')){
+    console.log("Nickname não foi marcado");
+  } else {
+    $(".demowide").css("display", "none");
+  }
+}
+function loadPage(pageName, ext){
+  current_page = pageName;
+  pageName = pageName.replace("#", "");
+  $('.container').html('<div id=p2 class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>');
+  $.get(pageName + "." + ext, function(data){
+    console.log("data loaded: " + pageName);
+    $(".container").html(data);
+  }).fail(function(){
+    loadPage(pageName, "php");
+  })
+}
