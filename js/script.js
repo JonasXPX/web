@@ -6,6 +6,9 @@ $(function(){
   }
   $(document).on('click', "a[id$='page']", function(){
     var page = $(this).attr('id').split("-")[0];
+    if(current_page == page){
+      return;
+    }
     $(location).attr('hash', page);
     loadPage(page, "html");
   });

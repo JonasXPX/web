@@ -94,6 +94,7 @@ footer{
   color: #fff;
   height: 176px;
   /*font-size: 12px;*/
+  background-color: gray;
   background-image: url("images/card.jpeg");
 
 }
