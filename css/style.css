@@ -5,6 +5,8 @@
   z-index: -1;
   display: block;
   background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   /*background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;*/
@@ -21,12 +23,6 @@
   box-shadow: 1px 1px 5px black;
 }
 
-.home-index h1{
-  text-align: center;
-  font-family: 'Ubuntu', sans-serif !important;
-  color: rgb(0, 164, 143);
-  text-shadow: 0.1mm 0.4mm 4px gray;
-}
 div .login-state{
   text-align: center;
 }
@@ -44,14 +40,29 @@ body{
 footer{
   clear: both;
   position: relative;
-  z-index: 10;
+  z-index: 2;
+  bottom: 0;
   /*height: 1px; */
-  margin-top: -3px;
+  margin-top: auto;
 }
+.mdl-navigation__link{
+  filter: blur(1px);
+}
+.mdl-navigation__link:hover{
+  filter: blur(0mm);
+}
+
+/* HOME.html */
 .home-title, .home-text {
   text-align: center;
   font-family: "Roboto", "Ubuntu", sans-serif;
-  text-shadow: 0.2mm 0.2mm 4px gray
+  text-shadow: 0.2mm 0.2mm 4px gray;
+}
+.home-index h1{
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif !important;
+  color: rgb(58, 254, 235);
+  text-shadow: 0 0 10px rgb(118, 195, 244);
 }
 .home-title h4 {
   font-size: 0.3in;

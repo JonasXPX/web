@@ -1,3 +1,75 @@
+<div class="background-icon">
+
+</div>
+<div class="ranking-page mdl-grid">
+
+</div>
 <script type="text/javascript">
-  window.location = "ranking.php";
+  $.get("http://www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'axes'}, function(data) {
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Axes</div>");
+    rg.html(rg.html() + data);
+    $(".ranking-page").append(rg);
+  });
+  $.get("http://www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'swords'}, function(data) {
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Espadas</div>");
+    rg.html(rg.html() + data);
+    $(".ranking-page").append(rg);
+  });
+  $.get("http://www.endcraft.com.br/getstatus.php?killsglad=0", function(data) {
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Matou em Gladiador</div>");
+    rg.html(rg.html() + data);
+    $(".ranking-page").append(rg);
+  });
+  $.get("http://www.endcraft.com.br/getstatus.php?topclansglad=0", function(data) {
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Melhores Clans</div>");
+    rg.html(rg.html() + data);
+    $(".ranking-page").append(rg);
+  });
+  $.get("http://www.endcraft.com.br/getstatus.php?topkills=0", function(data) {
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Killer</div>");
+    rg.html(rg.html() + data);
+    $(".ranking-page").append(rg);
+  });
+  $.get("http://www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'archery'}, function(data) {
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Arqueiro</div>");
+    rg.html(rg.html() + data);
+    $(".ranking-page").append(rg);
+  });
 </script>
+
+<style media="screen">
+.mdl-data-table th {
+  /*padding: 0 18px 12px 18px;*/
+  text-align: left;
+  color: rgba(255,255,255,.8);
+}
+.mdl-data-table a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.mdl-data-table tbody tr:hover {
+  /*padding: 0 18px 12px 18px;*/
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.title {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Ubuntu", sans-serif;
+  color: #ffffffb3;
+  z-index: 5;
+  position: relative;
+  line-height: 1;
+}
+.mdl-data-table {
+  background-color: #3d388680;
+  margin: auto;
+}
+.background-icon {
+  background-image: url(https://minecraft.net/static/realms/img/realms-opening.b0b0ae10199a.png);
+  z-index: 0;
+  position: absolute;
+  width: 587px;
+  height: 300px;
+  filter: blur(2px);
+
+}
+</style>
