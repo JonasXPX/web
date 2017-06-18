@@ -65,10 +65,12 @@
           <div class="mdl-mega-footer__drop-down-section">
               <input type="checkbox" class="mdl-mega-footer__heading-checkbox" checked>
               <h1 class="mdl-mega-footer__heading">Outros</h1>
-              <ul class="mdl-mega-footer__link-list">
-                <li><a href="#">Como ativar um VIP</a></li>
-                <li><a href="#">Ativando o PIN</a></li>
-                <li><a href="#">Recuperar senha de conta</a></li>
+              <ul id="footer-link__inner" class="mdl-mega-footer__link-list">
+                <script id='footer-links' type="text/x-hendlebars">
+                  {{#footer}}
+                    <li><a href="{{url}}">{{text}}</a></li>
+                  {{/footer}}
+                </script>
               </ul>
           </div>
         </div>
@@ -79,6 +81,7 @@
     </div>
     <script defer type="text/javascript">init();</script>
     <script src="configuration/navegation.js" charset="utf-8"></script>
+    <script src="configuration/footer-links.js" charset="utf-8"></script>
   </body>
   <!-- <script defer type="text/javascript" src="js/script.js"></script> -->
 </html>
