@@ -2,12 +2,10 @@ var current_page = null;
 
 $(function(){
   if ($(location).attr('hash')) {
-    console.log("Loading...");
     loadPage($(location).attr('hash'), "html");
   }
   $(document).on('click', "a[id$='page']", function(){
     var page = $(this).attr('id').split("-")[0];
-    console.log(page);
     $(location).attr('hash', page);
     loadPage(page, "html");
   });
@@ -16,19 +14,9 @@ $(function(){
     var text = $(this).val();
     test = /(\w{3,})(?!\W)/i.test(text);
     if(test){
-      console.log("alloed");
       $("button#okay-1").attr("disabled", null);
     } else {
       $("button#okay-1").attr("disabled", "disabled");
-    }
-
-    var h = handlebars.compile()
-  });
-  $("input#ol").keydown(function(v){
-    console.log(v);
-    test = /(\w+)(?!\W)/i.test(v);
-    if(!test){
-      v.preventDefault();
     }
   });
   $("button#okay-1").click(function(ev){
