@@ -81,3 +81,30 @@ footer{
   position: relative;
   z-index: 5;
 }
+.demo-card-wide.mdl-card {
+  width: 480px;
+  margin-bottom: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mdl-card {
+  min-height: 280px !important
+}
+.demo-card-wide > .mdl-card__title{
+  color: #fff;
+  height: 176px;
+  /*font-size: 12px;*/
+  background-image: url("images/card.jpeg");
+
+}
+.demo-card-wide button{
+  color: black;
+  cursor: pointer;
+}
+.demo-card-wide buttom:disabled{
+  color: gray;
+  cursor: not-allowed;
+}
+.demo-card-wide .mdl-card__supporting-text {
+  box-sizing: content-box;
+}

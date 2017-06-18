@@ -5,7 +5,7 @@ $(function(){
     console.log("Loading...");
     loadPage($(location).attr('hash'), "html");
   }
-  $("a[id$='page']").click(function(){
+  $(document).on('click', "a[id$='page']", function(){
     var page = $(this).attr('id').split("-")[0];
     console.log(page);
     $(location).attr('hash', page);
@@ -21,6 +21,8 @@ $(function(){
     } else {
       $("button#okay-1").attr("disabled", "disabled");
     }
+
+    var h = handlebars.compile()
   });
   $("input#ol").keydown(function(v){
     console.log(v);
