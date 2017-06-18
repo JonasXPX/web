@@ -6,32 +6,32 @@
 </div>
 <script type="text/javascript">
 $(function(){
-  $.get("http://www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'axes'}, function(data) {
+  $.get("//www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'axes'}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Axes</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
-  $.get("http://www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'swords'}, function(data) {
+  $.get("//www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'swords'}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Espadas</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
-  $.get("http://www.endcraft.com.br/getstatus.php?killsglad=0", function(data) {
+  $.get("//www.endcraft.com.br/getstatus.php?killsglad=0", function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Matou em Gladiador</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
-  $.get("http://www.endcraft.com.br/getstatus.php?topclansglad=0", function(data) {
+  $.get("//www.endcraft.com.br/getstatus.php?topclansglad=0", function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Melhores Clans</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
-  $.get("http://www.endcraft.com.br/getstatus.php?topkills=0", function(data) {
+  $.get("//www.endcraft.com.br/getstatus.php?topkills=0", function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Killer</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
-  $.get("http://www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'archery'}, function(data) {
+  $.get("//www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'archery'}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Arqueiro</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
