@@ -17,7 +17,8 @@ $(function() {
             'Chat VIP com o comando /v (Prioridade para falar com o admin)',
             'Pode remover MobSpawners de graça',
             'Pode usar o comando /Fix set para reparar a armadura',
-            'Pode usar o comando /autofix para reparar automaticamente quando a armadura quebrar']
+            'Pode usar o comando /autofix para reparar automaticamente quando a armadura quebrar',
+            'Pode vender itens usando o /mercado']
           }, {
             title: "VIP+",
             desc: [
@@ -32,7 +33,8 @@ $(function() {
               'Acesso a bigorna 24h por dia na /warp minavip',
               'Acesso ao kit vip e kit pvpvip',
               'Chat VIP com o comando /v (Prioridade para falar com o admin)',
-              'Pode remover MobSpawners de graça']
+              'Pode remover MobSpawners de graça',
+              'Pode vender itens usando o /mercado']
           }]
     };
 
