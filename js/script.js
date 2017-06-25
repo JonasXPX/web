@@ -26,7 +26,7 @@ $(function(){
     ev.preventDefault();
     if(test){
       $("#card-1").css("display", "none");
-      Cookies.set("nickname", $("input#ol").val()), {expires: 9999};
+      Cookies.set("nickname", $("input#ol").val(), {expires: 50});
       $("name").typed({
         strings: [Cookies.get("nickname"), "logou no EndCraft"],
         typeSpeed: 0
