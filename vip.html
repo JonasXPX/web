@@ -1,6 +1,6 @@
 
 <div class="vip-home">
-  <p class="title">Devido a uma manutenção, você só pode comprar VIP dentro do jogo, com o comando /comprar.<br/>Para comprar desbanimento use /desban em jogo.</p>
+  <!-- <p class="title">Devido a uma manutenção, você só pode comprar VIP dentro do jogo, com o comando /comprar.<br/>Para comprar desbanimento use /desban em jogo.</p> -->
   <div id="content-vips" class="mdl-grid">
     <script id="vips-pre" type="text/x-handlebars">
       {{#vips}}
@@ -15,9 +15,55 @@
       {{/vips}}
     </script>
   </div>
+  <div class="mdl-grid">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Comprar agora</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div class="viptypes" id="viptypes">
+          <script id="vips-list" type="text/x-handlebars">
+            {{#vips}}
+            <input type="radio" name="viptype" value="{{amount}}" id="{{name}}" {{#if isdefault}}checked{{/if}}>
+            <label id="forvip" for="{{name}}">{{title}}</label>
+            <br>
+            {{/vips}}
+          </script>
+        </div>
+        <ul class="amount" disabled>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+        </ul>
+        <div>
+          <p class="total"></p>
+        </div>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a id="comprar" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Comprar
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="configuration/vip.js" type="text/javascript" charset="utf-8"></script>
 </div>
-<script src="configuration/vip.js" type="text/javascript" charset="utf-8"></script>
 <style media="screen">
+  .demo-card-wide > .mdl-card__title{
+    /*background-color: rgba(0,0,0, 0.5);*/
+    background: rgb(11, 11, 16);
+    background-size: cover;
+  }
+  .mdl-card__title-text {
+    color: gray;
+    text-align: center;
+    font-size: 24px !important
+  }
+
   .vip-home {
     text-align: center;
     margin-top: 25px;
@@ -29,22 +75,87 @@
     font-family: "Ubuntu", sans-serif;
     text-shadow: 0px 0px 5px rgb(255,0,255), 0px 0px 5px gray;
   }
-  /*.float-left {
-    float: left;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10hv;
-  }
-  .float-right {
-    float: right;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 10%;
-  }*/
   .ofuscado {
     background-color: rgba(0, 0, 0, 0.8);
     color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     font-size: 12px;
   }
+  .viptypes {
+    text-align: left;
+  }
+  .viptypes > label {
+    margin-bottom: 5px;
+  }
+  .amount li {
+    display: inline;
+    padding: 10px 20px;
+    border: 1px solid rgba(211,211,211, 0.8);
+    background-color: white;
+  }
+  .amount li:hover{
+    background-color:  rgba(211,211,211, 0.2);
+    cursor: pointer;
+  }
+  .total {
+    font-size: 17px;
+    color: darkgreen;
+  }
+
+  .selected {
+    background-color: rgba(211,211,211, 0.8) !important;
+    color: black;
+    border: 2px solid rgba(211,211,211, 1) !important;
+  }
+
+  [type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #F87DA9;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
 </style>
