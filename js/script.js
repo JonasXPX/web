@@ -33,7 +33,10 @@ $(function(){
       })
     }
   });
-
+ $(".changename").click(function(){
+   Cookies.remove("nickname");
+   $("#card-1").css("display", "block");
+ });
 });
 
 // Inicilização de conteudo
@@ -41,7 +44,7 @@ function init(){
   if(!Cookies.get('nickname')){
     console.log("Nickname não foi marcado");
   } else {
-    $(".demowide").css("display", "none");
+    $("#card-1").css("display", "none");
   }
   if(!current_page)
   {

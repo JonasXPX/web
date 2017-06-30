@@ -13,8 +13,8 @@
   height: 100%;
   width: 100%;
   filter: blur(5px);
-
 }
+
 #p2 {
   margin-left: auto;
   margin-right: auto;
@@ -44,6 +44,15 @@ footer{
   bottom: 0;
   /*height: 1px; */
   margin-top: auto;
+}
+.changename {
+  text-align: center;
+  color: darkred;
+  font-size: 14px;
+  cursor: pointer;
+}
+.changename:hover {
+  color: red;
 }
 .mdl-navigation__link{
   filter: blur(1px);
