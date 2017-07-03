@@ -26,6 +26,7 @@ $(function() {
         <input type='hidden' name='type' value='"+ $("[name='viptype']:checked").attr("id") +"'> \
         <input type='hidden' name='amount' value='"+ $("[name='viptype']:checked").attr("value") +"'> \
         <input type='hidden' name='idref' value='"+ $("[name='viptype']:checked").attr("refid") +"'> \
+        <input type='hidden' name='gateway' value='"+ $("[name='gateway']:checked").attr('value') +"'>\
         </form>").appendTo("body").submit().remove();
   });
 
