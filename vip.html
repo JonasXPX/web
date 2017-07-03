@@ -24,7 +24,7 @@
         <div class="viptypes" id="viptypes">
           <script id="vips-list" type="text/x-handlebars">
             {{#vips}}
-            <input type="radio" name="viptype" value="{{amount}}" id="{{name}}" idref="{{idref}}" {{#if isdefault}}checked{{/if}}>
+            <input type="radio" name="viptype" value="{{amount}}" id="{{name}}" refid="{{idref}}" {{#if isdefault}}checked{{/if}}>
             <label id="forvip" for="{{name}}">{{title}}</label>
             <br>
             {{/vips}}
