@@ -20,6 +20,11 @@ $(function() {
       });
       return;
     }
+    if(!Cookies.get("nickname")){
+      e.preventDefault();
+      alert("Você precisa digitar seu nick loga abaixo");
+      return;
+    }
     $("<form method='POST' action='//www.endcraft.com.br/data/pagamento.php' target='_blank'> \
         <input type='hidden' name='username' value='"+ Cookies.get("nickname") +"'> \
         <input type='hidden' name='quantity' value='"+ lastElement.text() +"'> \
