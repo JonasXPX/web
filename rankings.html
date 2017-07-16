@@ -41,17 +41,20 @@ $(function(){
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
-  $.get("//www.endcraft.com.br/getstatus.php", {topkillsx1: 1}, function(data) {
+  $.get("https//www.endcraft.com.br/getstatus.php", {topkillsx1: 1}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>TOP Kills X1</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
-    getname(rg);
+    rg.find("tr > th").each(function(v) {
+      getname(v);
+    });
   });
   function getname(dom){
-    if(!Cookies.get("nickname"))
+    if(!Cookies.get("nickname")){
       return;
-      var regex = new RegExp(Cookies.get('nickname'), "ig");
-      dom.replace(regex, "$1" + "-l");
+    }
+    var regex = new RegExp(Cookies.get('nickname'), "ig");
+    dom.replace(regex, "$1" + "-l");
   }
 });
 </script>
