@@ -41,13 +41,12 @@ $(function(){
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
-  $.get("http//www.endcraft.com.br/getstatus.php", {topkillsx1: 1}, function(data) {
+  $.get("//www.endcraft.com.br/getstatus.php", {topkillsx1: 1}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>TOP Kills X1</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
-  //  getname(rg);
+    getname(rg);
   });
-
   function getname(dom){
     if(!Cookies.get("nickname"))
       return;
