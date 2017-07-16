@@ -45,8 +45,8 @@ $(function(){
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>TOP Kills X1</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
-    rg.find("tr > th").each(function(v) {
-      getname(v);
+    rg.find("table tr > th").each(function(v) {
+      //getname($(this));
     });
   });
   function getname(dom){
@@ -54,7 +54,7 @@ $(function(){
       return;
     }
     var regex = new RegExp(Cookies.get('nickname'), "ig");
-    dom.replace(regex, "$1" + "-l");
+    dom.html(dom.html().replace(regex, '$1-ig'));
   }
 });
 </script>
