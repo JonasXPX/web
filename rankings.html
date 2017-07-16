@@ -27,12 +27,17 @@ $(function(){
     $(".ranking-page").append(rg);
   });
   $.get("//www.endcraft.com.br/getstatus.php?topkills=0", function(data) {
-    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Killer</div>");
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Top Killer</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
   $.get("//www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'archery'}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Arqueiro</div>");
+    rg.html(rg.html() + data);
+    $(".ranking-page").append(rg);
+  });
+  $.get("//www.endcraft.com.br/getstatus.php", {gettopkdr: 1}, function(data) {
+    var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>TOP KDR do Mês</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
   });
