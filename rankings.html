@@ -10,51 +10,72 @@ $(function(){
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Axes</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
+    });
   });
   $.get("//www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'swords'}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Espadas</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
+    });
   });
   $.get("//www.endcraft.com.br/getstatus.php?killsglad=0", function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Matou em Gladiador</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
+    });
   });
   $.get("//www.endcraft.com.br/getstatus.php?topclansglad=0", function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Melhores Clans</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
+    });
   });
   $.get("//www.endcraft.com.br/getstatus.php?topkills=0", function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Top Killer</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
+    });
   });
   $.get("//www.endcraft.com.br/getstatus.php", {mcmmo: 1, skill: 'archery'}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>Arqueiro</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
+    });
   });
   $.get("//www.endcraft.com.br/getstatus.php", {gettopkdr: 1}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>TOP KDR do Mês</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
+    });
   });
   $.get("https://www.endcraft.com.br/getstatus.php", {topkillsx1: 1}, function(data) {
     var rg = $("<div class='mdl-cell mdl-cell--4-col'>").html("<div class='title'>TOP Kills X1</div>");
     rg.html(rg.html() + data);
     $(".ranking-page").append(rg);
-    rg.find("table tr > th").each(function(v) {
-      //getname($(this));
+    rg.find("table tr > th > span").each(function(v) {
+      getname($(this));
     });
   });
   function getname(dom){
     if(!Cookies.get("nickname")){
       return;
     }
-    var regex = new RegExp(Cookies.get('nickname'), "ig");
-    dom.html(dom.html().replace(regex, '$1-ig'));
+    var regex = new RegExp("(" + Cookies.get('nickname') + ")", "ig");
+    dom.html(dom.html().replace(regex, '<span style="color:orange;">$1</span>'));
   }
 });
 </script>
