@@ -22,7 +22,7 @@ $(function() {
     }
     if(!Cookies.get("nickname")){
       e.preventDefault();
-      alert("Você precisa digitar seu nick loga abaixo");
+      alert("Você precisa digitar seu nick logo abaixo");
       return;
     }
     $("<form method='POST' action='//www.endcraft.com.br/data/pagamento.php' target='_blank'> \
