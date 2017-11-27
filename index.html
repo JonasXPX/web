@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
     <script id="navegation" type="text/x-handlebars">
       {{#pages}}
-        <a id="{{pageid}}" class="mdl-navigation__link">{{name}}</a>
+        <a id="{{#if pageid}}{{pageid}}{{else}}{{id}}{{/if}}" class="mdl-navigation__link">{{name}}</a>
       {{/pages}}
     </script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,6 +39,7 @@
           <span class="mdl-layout-title">EndCraft</span>
           <div class="mdl-layout-spacer"> </div>
           <nav id="navegation-page" class="mdl-navigation">
+
           </nav>
         </div>
       </header>
