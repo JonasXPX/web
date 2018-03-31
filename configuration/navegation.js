@@ -15,6 +15,9 @@ $(function() {
     },{
       name: "Dúvidas",
       pageid: 'faq-page'
+    },{
+      name: "Recuperação",
+      pageid: 'recuperacao-page'
     }]
   };
 
