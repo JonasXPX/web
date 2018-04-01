@@ -1,0 +1,42 @@
+<div class="recuperacao">
+  <p>
+    Perdeu a senha da sua conta? Recupere atravez deste formulário online.
+  </p>
+
+  <div id="formulario_" class="formulario">
+    <form id="jsformulario" method="post">
+
+    <script id="pre-form" type="text/x-handlebars">
+      {{#form}}
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        {{#if rows}}
+        <textarea class="mdl-textfield__input" rows="{{rows}}" type="{{type}}" id="{{id}}"  {{#if pattern}}pattern="{{pattern}}"{{/if}} {{#if required}}{{required}}{{/if}}>
+        </textarea>
+        {{else}}
+        <input class="mdl-textfield__input" type="{{type}}" id="{{id}}" {{#if pattern}}pattern="{{pattern}}"{{/if}} {{#if required}}{{required}}{{/if}}>
+        {{/if}}
+        <label class="mdl-textfield__label" for="{{id}}">{{label}}</label>
+        <span class="mdl-textfield__error">* Obrigatório</span>
+      </div>
+      <br/>
+      {{/form}}
+    </script>
+  </form>
+  </div>
+  <button id="send_recuperacao" class="mdl-button mdl-js-button mdl-button--raised" type="button" name="button">Enviar</button>
+</div>
+
+<script src="configuration/recuperacao.js" type="text/javascript" charset="utf-8"></script>
+
+<style media="screen">
+  .recuperacao{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .recuperacao > p {
+    font-size: 23px;
+    font-family: ubuntu,sans-serif;
+    text-shadow: 1px 1px 20px black;
+  }
+
+</style>
