@@ -1,0 +1,382 @@
+<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+<script id="rl" src="js/material.min.js"></script>
+<link rel="stylesheet" href="css/material.min.css">
+<div class="user_page">
+  <div class="alerta">
+     <h4></h4>
+  </div>
+  <div class="info">
+    <div class="user-container">
+      <div class="block">
+        <div class="data">Esse aqui é você</div>
+        <div class="value"><img id="img-user" src="https://minotar.net/avatar/JonasXPX/75"><span id="username">JonasXPX</span></div>
+      </div>
+      <div class="block">
+        <div class="data">Sua carteira tem</div>
+        <div class="value"><img id="img-money" src="https://i.imgur.com/dSd6XGw.png?1" width="124px"><span id="money">R$ 0</span></div>
+      </div>
+      <div class="block">
+        <div class="data">Ultima atividade em jogo</div>
+        <div id="lastlogin" class="value">Dia 10 de Janeiro de 2018, pelo IP 192.168.1.1</div>
+      </div>
+    </div>
+
+    <div class="block block-right">
+      <button id="change_password" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      Alterar minha senha
+    </button>
+      <button id="registrarip" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      Registrar IP
+    </button>
+      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled>
+      Criar senha única do site
+    </button>
+      <button id="recuperar" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      Recuperar contas
+    </button>
+    </div>
+  </div>
+  <div id="modelo-password" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h4>Mudar senha</h4>
+      </div>
+      <div class="modal-body">
+        <p>Atenção: A mundaça de senha só é feita atravez do uso do PIN.</p>
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="pininput" type="text" name="pin" class="mdl-textfield__input">
+            <label class="mdl-textfield__label" for="pininput">PIN da conta</label>
+          </div>
+          <br>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="passwordinput" type="password" name="password" class="mdl-textfield__input">
+            <label class="mdl-textfield__label" for="passwordinput">Nova senha</label>
+          </div>
+        </form>
+        <button id="changepassword_button" class="mdl-button mdl-js-button mdl-button--raised" type="button" name="button" disabled>
+          Alterar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="modelo-registrarip" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h4>Registrar IP</h4>
+      </div>
+      <div class="modal-body">
+        <p>Atenção: Essa opção pode bloquear o acesso a sua conta.</p>
+        <p>Essa opção tem como objectivo liberar acesso a sua conta apenas para o IP informado, assim você evita que outros jogadores loguem na sua conta.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modelo-recuperar" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h4>Recuperar contas</h4>
+      </div>
+      <div class="modal-body">
+        <p>Atenção: Este formulário é assistido pela staff.</p>
+        <button class="mdl-button mdl-js-button mdl-button--raised" type="button" id="openformulario">
+          Abrir formulário
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised" type="button" id="openstatus">
+          Status de recuperação
+        </button>
+        <div class="status-recuperacao">
+          <p>Aqui você pode acompanhar o progresso da recuperação.</p>
+          <ul class="mdl-list" id="list-status">
+
+          </ul>
+        </div>
+        <div class="recup-formulario">
+          <p>Aviso: Passe o máximo de informações adicionais, assim as chances de recuperação é muito maior.</p>
+          <form id="form-recuperacao" action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input id="userinput" type="text" name="username" class="mdl-textfield__input">
+              <label class="mdl-textfield__label" for="userinput">Nome de Usuário que deseja recuperar</label>
+            </div><br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input id="lastlogininput" type="text" name="lastlogin" class="mdl-textfield__input">
+              <label class="mdl-textfield__label" for="lastlogininput">Ultimo dia de login</label>
+            </div><br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <textarea id="keysinput" type="text" rows="3" name="keyvips" class="mdl-textfield__input"></textarea>
+              <label class="mdl-textfield__label" for="keysinput">Keys de ativação VIP</label>
+            </div><br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input id="emailinput" type="text" name="email" class="mdl-textfield__input">
+              <label class="mdl-textfield__label" for="emailinput">Seu e-mail</label>
+            </div><br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <textarea id="adicionalinput" type="text" name="adicionais" class="mdl-textfield__input"></textarea>
+              <label class="mdl-textfield__label" for="adicionalinput">Informações adicionais que possam ajudar</label>
+            </div>
+        </form>
+          <button id="send-formulario" class="mdl-button mdl-js-button mdl-button--raised" type="button">
+            Enviar formulário
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    loadScreen(false);
+    if(Cookies.get("userhash") == null || Cookies.get("token") == null){
+      $(".alerta > h4").text("Você precisa logar em jogo e digitar /entrarsite");
+    }
+    $("#change_password").click(function() {
+      $("#modelo-password").css("display", "block");
+    });
+    $("#registrarip").click(function() {
+      $("#modelo-registrarip").css("display", "block");
+    });
+    $("#recuperar").click(function() {
+      $("#modelo-recuperar").css("display", "block");
+    });
+    $(document).on("click", ".modal-close", function() {
+      $("[id^=modelo]").css("display", "none");
+    });
+
+    $(document).on("click", "#openformulario", function() {
+      openFormulario();
+    });
+    $(document).on("click", "#openstatus", function() {
+      openFormularioStatus();
+    });
+    $(document).on("click", "#send-formulario", function() {
+      sendFormulario();
+      $("#send-formulario").attr("disabled", "disabled");
+    });
+    $(document).on("click", "#changepassword_button", function() {
+      changepassword();
+    });
+  })
+  function openFormularioStatus() {
+    st = $(".status-recuperacao");
+    rf = $(".recup-formulario");
+    if(st.css("display") == "none"){
+      st.css("display", "block");
+      rf.css("display", "none");
+      loadRecuperacao();
+    } else {
+      st.css("display", "none");
+    }
+  }
+  function openFormulario() {
+    st = $(".status-recuperacao");
+    rf = $(".recup-formulario");
+    if(rf.css("display") == "none") {
+      rf.css("display", "block");
+      st.css("display", "none");
+      $("#openformulario").text("Fechar formulário");
+    } else {
+      rf.css("display", "none");
+      $("#openformulario").text("Abrir formulário");
+    }
+  }
+  function loadScreen(drop) {
+    try {
+      var token;
+      var username;
+      if(!drop){
+        data = window.location.href.toString().split("?")[1].split("&");
+        token = data[0].split("=")[1];
+        username = data[1].split("=")[1];
+        Cookies.set("userhash", username, {expires: 1/48, secure: true});
+        Cookies.set("token", token, {expires: 1/48, secure: true});
+      } else {
+        token = Cookies.get("token");
+        username = Cookies.get("userhash");
+      }
+      $.post("https://www.endcraft.com.br/user.php", {load: 1, username: username, token: token},
+        function(data) {
+          console.log(data);
+        }, "json").done(function(data) {
+          if(!data.erro)
+            loadthat(data);
+        });
+    } catch (e) {
+        console.log(e.message);
+        loadScreen(true);
+    } finally {
+        if(Cookies.get("userhash") == null && Cookies.get("token") == null){
+          $(".alerta > h4").text("Você precisa logar em jogo e digitar /entrarsite.");
+        }
+    }
+  }
+
+  function loadthat(data) {
+    $("#money").text("R$ " + data["iConomy"][0]["balance"]);
+    $("#lastlogin").text(new Date(1527730063424).toLocaleString());
+  }
+
+  function changepassword() {
+
+  }
+
+  function loadRecuperacao() {
+    $("#list-status").text("");
+    $.post("https://www.endcraft.com.br/user.php", {status: 1, token: Cookies.get('token'), username: Cookies.get('userhash')},
+      function(data) {
+        $.each(data, function(i,v) {
+          var info = JSON.parse(v['data']);
+          $("#list-status").append("" +
+          "<li class='mdl-list__item mdl-list__item--three-line'>"+
+            "<span class='mdl-list__item-primary-content'>"+
+              "<i class='mdl-list__item-avatar'><img style='border-radius:13' src='https://minotar.net/avatar/"+ info.username +"/45'></i>"+
+              "<span>"+ info.username +"</span>"+
+              "<span class='mdl-list__item-text-body'>"+
+                "Enviado por " + v['username'] +
+              "</span>"+
+            "</span>"+
+            "<span class='mdl-list__item-secondary-content'>"+
+              "<span>"+ v['status'] +"</span>"+
+            "</span>"+
+          "</li>");
+        });
+      }, "json");
+  }
+
+  function sendFormulario() {
+    $("#form-recuperacao").append("<input type='hidden' name='sender' value='"+ Cookies.get('userhash') +"'>");
+
+    $.post("https://www.endcraft.com.br/user.php", $("#form-recuperacao").serialize(),
+      function(data) {
+        $("#send-formulario").removeAttr("disabled");
+      },"json").done(function(d) {
+          openFormularioStatus();
+      })
+  }
+
+  function sendPassword() {
+
+  }
+  function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp);
+  var months = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+  return time;
+}
+</script>
+<style media="screen">
+  .status-recuperacao {
+    display: none;
+  }
+  .recup-formulario {
+    display: none;
+  }
+  .modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .modal-close:focus,
+  .modal-close:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-header {
+    padding: 2px 16px;
+    background-color: rgba(90, 52, 20, 0.8);
+    font-size: 12px
+  }
+  .modal-body {
+    padding: 2px 16px;
+    margin-bottom: 10px;
+  }
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 80%;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    z-index: 51;
+  }
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+  .modal {
+    z-index: 50;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .user-container{
+    float:left;
+    padding: 5px;
+  }
+  .info {
+    background-color: rgba(0, 25, 25, 0.5);
+    padding: 20px 40px 20px 40px;
+    display: flow-root;
+  }
+  .user_page {
+      margin: 0px 50px 0px 50px;
+  }
+  .alerta > h4 {
+    color: #ff2053;
+    text-align: center;
+    margin: 15px;
+  }
+  .block {
+    display: inline-table;
+    font-family: sans-serif, ubuntu;
+    background-color: rgba(80, 31, 111, 0.5);
+    text-align: center;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    border-radius: 5px;
+    color: #bdbdbd;
+  }
+  .block.block-right {
+    float: right;
+    display: inline-grid;
+  }
+  .block.block-left {
+    display: inline-grid;
+  }
+  .block > button {
+    margin: 10px;
+    color: #bdbdbd;
+  }
+  .block > .data {
+    display: grid;
+    font-size: 20px;
+    text-align: center;
+  }
+  .block > .value {
+    display: inline-grid;
+    text-align: center;
+  }
+</style>
