@@ -8,16 +8,16 @@
   <div class="info">
     <div class="user-container">
       <div class="block">
-        <div class="data">Esse aqui é você</div>
-        <div class="value"><img id="img-user" src="https://minotar.net/avatar/JonasXPX/75"><span id="username">JonasXPX</span></div>
+        <div class="data">Este aqui é você</div>
+        <div class="value"><img id="img-user" src="https://minotar.net/avatar/a/75"><span id="username"></span></div>
       </div>
       <div class="block">
         <div class="data">Sua carteira tem</div>
         <div class="value"><img id="img-money" src="https://i.imgur.com/dSd6XGw.png?1" width="124px"><span id="money">R$ 0</span></div>
       </div>
       <div class="block">
-        <div class="data">Ultima atividade em jogo</div>
-        <div id="lastlogin" class="value">Dia 10 de Janeiro de 2018, pelo IP 192.168.1.1</div>
+        <div class="data">Última atividade em jogo</div>
+        <div id="lastlogin" class="value"></div>
       </div>
     </div>
 
@@ -73,8 +73,6 @@
       </div>
     </div>
   </div>
-
-
   <div id="modelo-recuperar" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -204,6 +202,11 @@
         }, "json").done(function(data) {
           if(!data.erro)
             loadthat(data);
+            else {
+              $(".alerta > h4").text("Você precisa logar em jogo e digitar /entrarsite.");
+              $(".info button").attr("disabled", "disabled");
+              $("#lastlogin").text("Sem atividade");
+            }
         });
     } catch (e) {
         console.log(e.message);
@@ -217,7 +220,9 @@
 
   function loadthat(data) {
     $("#money").text("R$ " + data["iConomy"][0]["balance"]);
-    $("#lastlogin").text(new Date(1527730063424).toLocaleString());
+    $("#username").text(data['username']);
+    $("#img-user").attr("src", "https://minotar.net/avatar/"+ data['username'] +"/75").css("borderRadius", "12px");
+    $("#lastlogin").text(new Date().toLocaleString());
   }
 
   function changepassword() {
