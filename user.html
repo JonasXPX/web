@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 <script id="rl" src="js/material.min.js"></script>
 <link rel="stylesheet" href="css/material.min.css">
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="user_page">
   <div class="alerta">
      <h4></h4>
@@ -116,6 +117,7 @@
               <textarea id="adicionalinput" type="text" name="adicionais" class="mdl-textfield__input"></textarea>
               <label class="mdl-textfield__label" for="adicionalinput">Informações adicionais que possam ajudar</label>
             </div>
+            <div class="g-recaptcha" data-sitekey="6LcEyFwUAAAAAJeqqQRKl0mTUYOWKZ5Q__2s7uSP"></div>
         </form>
           <button id="send-formulario" class="mdl-button mdl-js-button mdl-button--raised" type="button">
             Enviar formulário
@@ -260,6 +262,7 @@
         $("#send-formulario").removeAttr("disabled");
       },"json").done(function(d) {
           openFormularioStatus();
+          $("#form-recuperacao input,textarea").val("");
       })
   }
 
