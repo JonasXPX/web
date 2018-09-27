@@ -62,6 +62,7 @@ function loadPage(pageName, ext){
     console.log("data loaded: " + pageName);
     $(".container").html(data);
   }).fail(function(){
+    console.log("Error loadpage()");
     loadPage(pageName, "php");
   })
 }
