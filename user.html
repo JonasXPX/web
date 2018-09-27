@@ -195,7 +195,8 @@
       var token;
       var username;
       if(!drop){
-        data = window.location.href.toString().split("?")[1].split("&");
+        data = window.location.href.toString().split("#")[1].split("&");
+        console.log(data);
         token = data[0].split("=")[1];
         username = data[1].split("=")[1];
         Cookies.set("userhash", username, {expires: 1/48, secure: true});
