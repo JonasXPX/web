@@ -56,16 +56,18 @@ $(function() {
             'Usar /disco com set de couro',
             'Ver o inventário de outros jogadore com /verinv',
             'Usar o /bau (Bau virtual)',
-            'Drops exclusivos durante a mineração',
             'Usar /efeito Vários efeitos super legais',
             'Acesso a bigorna 24h por dia na /warp minavip',
             'Eventos privados na sala de eventos na /warp vip',
+			'Fazer Loja',
+			'Comprar terrenos de aluguel no /spawn',
             'Acesso ao kit viphero e kit pvpvip',
             'Chat VIP com o comando /v (Prioridade para falar com o admin)',
             'Pode remover MobSpawners de graça',
             'Pode usar o comando /Fix set para reparar a armadura',
             'Pode usar o comando /autofix para reparar automaticamente quando a armadura quebrar',
-            'Pode vender itens usando o /mercado']
+            'Pode vender itens usando o /mercado',
+			'* NOVIDADE: Ganha mais experiencia que jogadores normais e VIP+']
           }, {
             amount: '17.00',
             idref: '100',
@@ -83,9 +85,11 @@ $(function() {
               'Fazer Loja',
               'Acesso a bigorna 24h por dia na /warp minavip',
               'Acesso ao kit vip e kit pvpvip',
+			  'Comprar terrenos de aluguel no /spawn',
               'Chat VIP com o comando /v (Prioridade para falar com o admin)',
               'Pode remover MobSpawners de graça',
-              'Pode vender itens usando o /mercado']
+              'Pode vender itens usando o /mercado',
+			  '* NOVIDADE: Ganha mais experiencia que jogadores normais, podem menos que VIP HERO']
           }]
     };
 
