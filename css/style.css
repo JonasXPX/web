@@ -118,3 +118,18 @@ footer{
 .demo-card-wide .mdl-card__supporting-text {
   box-sizing: content-box;
 }
+
+.grass_icon {
+  animation: grass-icon-spin infinite 20s linear;
+  height: 20vmin;
+
+}
+
+@keyframes grass-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
